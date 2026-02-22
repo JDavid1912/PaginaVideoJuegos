@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Coalition', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.05em;
+}
+
+body {
+    background-image: url('../img/Call.jpg');
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;  
+    background-attachment: fixed;  
+    min-height: 100vh;
+    color: white;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+}

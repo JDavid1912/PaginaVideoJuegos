@@ -1,0 +1,19 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+}
+#carouselExampleIndicators{
+    width: 300%;
+    max-width: 1200px;
+}
+
+.CAROUSEL-item img {
+    width: 500%;
+    height: 2500px;
+    object-fit: cover;
+    justify-content: center;
+}
+
+
+
