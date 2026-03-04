@@ -24,6 +24,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/Link"> Juegos</a>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -39,6 +40,11 @@
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
+      <div class="d-flex gap-2">
+        <a href="/login" class="btn btn-outline-primary">Inicio</a>
+        <a href="/register" class="btn btn-primary">Registro</a>
+    
+      </div>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
