@@ -24,11 +24,12 @@
           <div class="header-center">
             <p>Bienvenido, {{ Auth::user()->name?? 'Usuario' }}</p>
            </div>
-            
+           
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>
-
+            <a href="{{ route ('posts.index') }}" class="btn btn-primary">Gestionar Publicaciones
+           </a>
             <a href="{{ route('logout') }}" 
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Cerrar Sesión
@@ -84,7 +85,9 @@
                 </div>
             </div>
         </div>
+
     </div>
+
     </main>
         <footer>
             <!-- place footer here -->

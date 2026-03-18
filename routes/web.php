@@ -3,16 +3,23 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\PostContreller;
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 
-
+Route::get('/Post', function () {
+    return view('views.welcome');
+});
 
 Route::get('/', function () {
     return view('welcome');
 });
-
+ 
 Route::get('/Link', function () {
     return view('Link');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::resource('posts', PostController::class);
 });
 
 Route::get('/register', [RegisterController::class, 'create'])->name('register');

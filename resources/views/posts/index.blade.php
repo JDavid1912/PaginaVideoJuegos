@@ -19,7 +19,7 @@
             </tr>
         </thead>
            @foreach ($posts as $post)
-               <tr>
+            <tr>
                 <td>{{ $post-> id }}</td>
                 <td>{{ $post-> title }}</td>
                 <td>{{ $post-> status }}</td>
@@ -27,7 +27,8 @@
                 <form method="POST" action='{{route('posts.destroy', $post->id)}}'>
                 @csrf
                 @method('DELETE')
-                <button class="btn" type="submit">Eliminar</button></td>
+                <button class="btn" type="submit">Eliminar</button>
+                </td>
                 </form>
             </tr>
            @endforeach
