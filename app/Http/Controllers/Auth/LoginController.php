@@ -21,7 +21,7 @@ class LoginController extends Controller{
             'password' => ['required','string'],
         ]);
 
-        if (!Auth::attempt($credentials)) {
+        if (!auth::attempt($credentials)) {
             throw ValidationException::withMessages([
                 'email' =>  'credenciales no validas',
             ]);

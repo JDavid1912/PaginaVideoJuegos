@@ -21,8 +21,9 @@
 
     <body>
         <header>
-            <h1>Dashboard</h1>
+          <div class="header-center">
             <p>Bienvenido, {{ Auth::user()->name?? 'Usuario' }}</p>
+           </div>
             
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
@@ -34,9 +35,57 @@
             </a>
 
         </header>
-        <main>
+       
+    <main class="container mt-5">
 
-        </main>
+        <!-- Sección de bienvenida gamer -->
+          <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-dark text-white shadow">
+                <div class="card-body text-center">
+                    <h2>🎮 Panel de Videojuegos</h2>
+                    <p>Administra tus juegos favoritos desde aquí.</p>
+                </div>
+               </div>
+            </div>
+        </div>
+
+    <!-- Juegos destacados -->
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Juego">
+                <div class="card-body">
+                    <h5 class="card-title">Call of Duty</h5>
+                    <p class="card-text">Juego de disparos en primera persona.</p>
+                    <button class="btn btn-dark w-100">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Juego">
+                <div class="card-body">
+                    <h5 class="card-title">FIFA 24</h5>
+                    <p class="card-text">Simulador de fútbol competitivo.</p>
+                    <button class="btn btn-success w-100">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Juego">
+                <div class="card-body">
+                    <h5 class="card-title">Minecraft</h5>
+                    <p class="card-text">Exploración, construcción y aventura.</p>
+                    <button class="btn btn-primary w-100">Ver más</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
         <footer>
             <!-- place footer here -->
         </footer>
