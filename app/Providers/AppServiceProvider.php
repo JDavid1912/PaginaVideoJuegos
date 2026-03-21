@@ -11,9 +11,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
-    }
 
+    }
+        protected $policies = [
+    \App\Models\Post::class => \App\Policies\PostPolicy::class,
+];
     /**
      * Bootstrap any application services.
      */

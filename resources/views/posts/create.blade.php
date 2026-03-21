@@ -3,16 +3,28 @@
 
 <div class="container">
     <h1>Crear Publicación</h1>
-    <hr>
     <form method="POST" action="{{route('posts.store')}}">
         @csrf
         <div>
             <label>Titulo</label>
             <input type="text" name="title" 
             value="{{ old('title') }}" 
-            maxlength="150"
-             >
+            maxlength="150" required>
         </div>
+
+        <div>
+            <label>Slug</label>
+            <input type="text" name='slug'
+             value="{{ old('slug') }}" required>
+        </div>
+
+       <div>
+            <label>Contenido</label>
+            <textarea name="content" rows="6" required>
+                {{ old('content') }}
+            </textarea>
+        </div>
+
         <div>
             <label>Estado</label>
             <select name="status">
@@ -20,6 +32,7 @@
                 <option value="Publicado">Publicado</option>
             </select>
         </div>
+
         <button type="submit">Guardar</button>
     </form>
 </div>
