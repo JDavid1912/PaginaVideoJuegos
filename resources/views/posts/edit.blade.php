@@ -6,8 +6,8 @@
     <hr>
     <form method="POST" action="{{route('posts.update', $post->id)}}">
 
-@csrf
-@method('PUT')
+    @csrf
+    @method('PUT')
 
         <div>
             <label>Titulo</label>
@@ -17,10 +17,9 @@
         </div>
 
         <div>
-            <label>slug</label>
+            <label>Slug</label>
             <input type="text" name="slug" 
-            value="{{ old('slug', $post->slug) }}" 
-            required>
+            value="{{ old('slug', $post->slug) }}" required>
         </div>
 
         <div>
@@ -32,9 +31,12 @@
         <div>
             <label>Estado</label>
             <select name="status">
-                <option value="draft" {{ old('status', $post->status) == 'draft' ? 'selected' : '' }}>Borrador</option>
-                <option value="published" {{ old('status', $post->status) == 'published' ? 'selected' : '' }}>Publicado</option>
-            </option>
+                <option value="draft" 
+                {{ old('status', $post->status) == 'draft' ? 'selected' : '' }}>Borrador
+                </option>
+                <option value="published" 
+                {{ old('status', $post->status) == 'published' ? 'selected' : '' }}>Publicado
+                </option>
             </select>
         </div>
         <button type="submit">Actualizar</button>

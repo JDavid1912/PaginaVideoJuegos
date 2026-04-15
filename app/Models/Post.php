@@ -10,15 +10,14 @@ class Post extends Model
         'title',
         'slug',
         'content',
-        'status',
+        'status'
     ];
 
-    protected $casts=[
+    protected $casts = [
         'status' => 'string',
     ];
 
-    public function user()
-    {
+    public function user(){
         return $this->belongsTo(User::class);
     }
 }

@@ -1,19 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Post;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use app\Models\User;
 
 class PostController extends Controller
-{    
+{
     use AuthorizesRequests;
     public function index()
-    {   
-        
+    {
         $posts = auth()->user()->posts()->latest()->paginate(10);
         return view('posts.index', compact('posts'));
     }
@@ -30,7 +27,7 @@ class PostController extends Controller
             'status'  => 'required|in:draft,published',
         ]);
         if (empty($data['slug']))
-            $data['slug'] = Str::slug($data['title']); 
+            $data['slug'] = Str::slug($data['title']); // auto-slug
         auth()->user()->posts()->create($data);
         return redirect()->route('posts.index')->with('ok','Creada.');
     }
@@ -45,11 +42,10 @@ class PostController extends Controller
     {
         $this->authorize('update', $post);
         $data = $request->validate([
-            'title'=>'required|string|max:150',
-            'slug' => 'nullable|string|max:150|unique:posts,slug,'.$post->id,
+            'slug' => 'nullable|string|max:150|unique:posts,slug,' . $post->id,
+            'title' => 'required|string|max:150',
             'content' => 'required|string',
-            'status' => 'required|in:draft,published'
-            
+            'status'  => 'required|in:draft,published',
         ]);
         if (empty($data['slug'])) $data['slug'] = Str::slug($data['title']);
         $post->update($data);

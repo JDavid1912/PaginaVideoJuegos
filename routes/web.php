@@ -6,9 +6,10 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 
-Route::get('/Post', function () {
-    return view('views.welcome');
-});
+Route::get('/', function() {
+    $posts = Post::latest()->take(5)->get();
+    return view('welcome', compact('posts'));
+})->name('welcome');
 
 Route::get('/', function () {
     return view('welcome');

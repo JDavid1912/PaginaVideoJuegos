@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
   
 <div class="container">
@@ -27,19 +26,21 @@
                 <td>{{ $post->id }}</td>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->status }}</td>
-                <td>{{$post->slug}}
-                <a href="{{route('posts.edit', $post->id)}}">Editar</a></td>
-                <a href="{{route('posts.show', $post->id)}}">Ver</a></td>
-                <form method="POST" action='{{route('posts.destroy', $post->id)}}'>
+                <td>{{$post->slug}}</td>
+                <td>
+                    <a href="{{route('posts.edit', $post->id)}}">Editar</a>
+                    <a href="{{route('posts.show', $post->id)}}">Ver</a>
+                </td>
+                <form method="POST" 
+                        action='{{route('posts.destroy', $post->id)}}'
+                        style >
                 @csrf
                 @method('DELETE')
                 <button class="btn" type="submit">Eliminar</button>
                 </td>
                 </form>
             </tr>
-           @endforeach
-        <tbody>
-        </tbody>    
+           @endforeach    
     </table>
 </div>
 @endsection

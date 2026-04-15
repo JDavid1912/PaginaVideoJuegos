@@ -11,8 +11,10 @@ class PostPolicy
     /**
      * Determine whether the user can view any models.
      */
-  public function viewAny(User $user): bool { return true; }
-    public function create(User $user): bool   { return true; }
+    public function viewAny(User $user): bool { 
+    return true; }
+    public function create(User $user): bool   { 
+    return true; }
 
     public function view(User $user, Post $post): bool
     {   return $post->user_id === $user->id;  }
@@ -26,9 +28,7 @@ class PostPolicy
     {   return $post->user_id === $user->id;  }
 
 
-    /**
-     * Determine whether the user can delete the model.
-     */
+  
      public function delete(User $user, Post $post): bool
     {   return $post->user_id === $user->id;  }
 
